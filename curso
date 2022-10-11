@@ -1,0 +1,11 @@
+primer dia
+
+earth catalog probably the most basic seismology resourccce used as a starting point for nearly any seismologicl investigation providers globals ISC USGS Geofon
+
+getting data
+from obspy.clients.fdsn import Client
+from obspy.core import UTCDateTime
+
+client = Client('iris')
+t=UTCDateTime(2018,1,1,0,0,0)
+data = client.get_waveforms('C1','BI05','--','HHZ',t,t+3600.)
